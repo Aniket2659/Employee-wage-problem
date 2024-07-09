@@ -1,18 +1,18 @@
 import random
+def monthly_wage():
+    wage=0
+    for i in range(20):
+        attendance=random.randint(0,1)
+        if attendance==0:
+            continue
+        if attendance==1:
+            time=input('enter a type of job :').strip().lower()
+            if time=='part':
+                wage=wage+(20*6)
+            elif time=='full':
+                wage=wage+(20*8)
+            else:
+                print("Invalid job type.")
+    return wage
 
-def check_attendance(attendance):
-    match attendance:
-        case 0:
-            return 0
-        case 1:
-            time = input('Enter a type of job (part/full) :')
-            match time:
-                case 'part':
-                    return 20 * 6
-                case 'full':
-                    return 20 * 8
-                case _:
-                    return "Invalid job type"
-
-atd_random = random.randint(0, 1)
-print(check_attendance(atd_random))
+print(f"Total monthly wage: {monthly_wage()}")
