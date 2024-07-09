@@ -1,9 +1,8 @@
 import random
-
 def check_attendance(attendance):
     if attendance==0:
-        print('employee is absent')
+        return 0
     if attendance==1:
-        print('employee is present')
-atd_check=random.randint(0,1)
-check_attendance(atd_check)
+        return 20*8
+atd_random=random.randint(0,1)
+print(check_attendance(atd_random))
